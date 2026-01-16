@@ -800,11 +800,11 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
-    border-top: 1px solid #f0f0f0;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-light);
-    font-weight: 600;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
 }
 
 .project-meta i {
@@ -1061,24 +1061,183 @@ ul {
     color: rgba(255, 255, 255, 0.6);
 }
 
-@media (max-width: 600px) {
+/* --- MOBILE RESPONSIVENESS --- */
+
+/* Tablet & Smaller Laptops (Max Width: 900px) */
+@media screen and (max-width: 900px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        /* Stack image on top of text on small screens if desired, or text first. Let's try text below image usually or vice versa. Standard: Text first, but for 'Profile' look, Image first often works too. Let's stick to stack. */
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero-buttons a {
+        margin-right: 0;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        /* Stack contact info and form */
+        gap: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablet */
+    }
+}
+
+/* Mobile Devices (Max Width: 768px) */
+@media screen and (max-width: 768px) {
+
+    /* Navbar */
     .navbar {
         height: auto;
-        padding: 10px;
+        padding: 10px 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .nav-links {
-        display: none;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+        /* Ensure it overrides any hidden states */
+        width: 100%;
     }
 
-    /* Mobile Menu todo */
-    .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .hero {
+        padding-top: 140px;
+        /* More space for stacked navbar */
+        padding-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
     }
 
     .hero-img {
-        width: 100px;
-        height: 100px;
+        width: 180px;
+        height: 200px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x2 grid for stats */
+        gap: 15px;
+    }
+
+    .stat-item {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 45px;
+    }
+
+    .timeline-dot {
+        left: 9px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* 1 column for projects */
+    }
+
+    .edu-card {
+        padding-left: 20px;
+        padding-top: 70px;
+        /* Make space for icon at top */
+    }
+
+    .edu-icon {
+        left: 20px;
+        top: 20px;
+    }
+}
+
+/* Small Mobile (Max Width: 480px) */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-job {
+        font-size: 1rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        /* Stack stats */
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+        margin: 0;
+    }
+
+    .contact-form,
+    .contact-info-box {
+        padding: 25px;
     }
 }
