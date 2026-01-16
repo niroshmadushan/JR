@@ -1,0 +1,366 @@
+:root {
+    --color-primary: #1B365D;
+    --color-secondary: #0077b6;
+    --color-bg: #fff;
+    /* Changed to white for cleaner compact look */
+    --color-sidebar: #f8f9fa;
+    /* Very light gray sidebar instead of dark to save ink/space visual weight */
+    --color-sidebar-text: #2c3e50;
+    --color-text-main: #333;
+    --color-text-light: #666;
+    --color-gold: #D4AF37;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+
+    --shadow-card: none;
+    /* Removed shadows for compaction */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e0e5ec;
+    font-family: var(--font-body);
+    font-size: 13px;
+    /* Requested 13px */
+    color: var(--color-text-main);
+    line-height: 1.4;
+    display: flex;
+    justify-content: center;
+}
+
+.a4-container {
+    background-color: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 1rem auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cv-layout {
+    display: flex;
+    min-height: 297mm;
+    align-items: stretch;
+}
+
+/* --- Left Column (Sidebar) --- */
+.left-column {
+    width: 28%;
+    /* Reduced width */
+    background: #f4f6f8;
+    /* Light gray */
+    color: #333;
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #e0e0e0;
+    font-size: 12px;
+    /* Smaller for sidebar */
+}
+
+.profile-initials {
+    display: none;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Sidebar Sections */
+.left-column h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    margin-top: 1.5rem;
+}
+
+.left-column h3:first-child {
+    margin-top: 0;
+}
+
+.contact-list,
+.skills-list,
+.languages-list,
+.references-section,
+.extracurricular-sidebar-section,
+.education-sidebar-section {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.contact-list li {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0.75rem;
+    align-items: flex-start;
+}
+
+.contact-list li i {
+    color: var(--color-primary);
+    margin-top: 2px;
+    font-size: 11px;
+}
+
+.contact-list li span {
+    word-break: break-all;
+}
+
+.skills-list li,
+.languages-list li,
+.compact-list-sidebar li {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.compact-list-sidebar li {
+    font-size: 11px;
+    line-height: 1.4;
+    display: block;
+    /* Ensure it takes full width */
+    word-wrap: break-word;
+    /* Wrap long words if needed */
+    white-space: normal;
+    /* Allow wrapping */
+}
+
+.qualification-item {
+    margin-bottom: 0.75rem;
+}
+
+.qualification-item h4 {
+    font-size: 12px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.qualification-item .sub-text {
+    opacity: 0.8;
+    font-size: 11px;
+}
+
+/* --- Right Column --- */
+.right-column {
+    width: 72%;
+    padding: 1.5rem 2rem;
+}
+
+/* Header */
+.cv-header {
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+}
+
+.cv-header h1 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    /* Name must be visible */
+    color: var(--color-primary);
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.cv-header h2 {
+    font-size: 14px;
+    /* Title max 14px */
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Sections */
+.right-column section {
+    margin-bottom: 1.25rem;
+}
+
+.right-column section h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: 14px;
+    /* Title max 14px */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0f4f8;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.right-column section h3 i {
+    font-size: 12px;
+}
+
+/* Content */
+.summary-section p {
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+/* Experience List - TIGHT */
+.experience-list {
+    border-left: 2px solid #ddd;
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.job-item {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.job-item::before {
+    content: '';
+    position: absolute;
+    left: -1.35rem;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+}
+
+.job-header h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+}
+
+.job-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    background: #eee;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.job-company {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin-bottom: 4px;
+}
+
+.job-details {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-details li {
+    font-size: 13px;
+    margin-bottom: 3px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.job-details li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+.highlight-item {
+    background: #eef (light blue);
+    color: var(--color-primary);
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.highlight-item i {
+    color: var(--color-gold);
+    margin-right: 4px;
+}
+
+/* Education */
+.edu-item {
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.edu-school {
+    font-size: 12px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Extra */
+.compact-list li {
+    margin-bottom: 2px;
+    padding-left: 12px;
+    position: relative;
+}
+
+.compact-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+@media print {
+    .a4-container {
+        margin: 0;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+    }
+
+    body {
+        background: white;
+    }
+
+    .cv-layout {
+        display: block;
+        column-count: 2;
+        column-gap: 2rem;
+    }
+
+    /* Force 2 column layout in print specifically if flex fails to support breaks well, but flex usually fine for single page */
+    .cv-layout {
+        display: flex;
+    }
+}
